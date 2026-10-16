@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Happy 21st, Ritika ♡</title>
+  <meta name="description" content="A little scroll through twenty-one years of you. Happy birthday, Ritika." />
+  <meta name="theme-color" content="#241730" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" as="image" href="photos/photo-001.jpg" />
+</head>
+
+<body class="is-booting">
+
+  <!-- ===== gate (click to begin) ===== -->
+  <div id="gate">
+    <div class="gate-bokeh gb1"></div>
+    <div class="gate-bokeh gb2"></div>
+    <div class="gate-inner">
+      <div class="gate-kicker">a little something made just for you</div>
+      <div class="gate-heart" aria-hidden="true">&#9825;</div>
+      <button class="gate-btn" id="gateBtn">
+        <span class="gate-ring"></span>
+        <span class="gate-txt">Hi Ritika, Click Me</span>
+      </button>
+      <div class="gate-hint">&#9835; best experienced with sound on</div>
+    </div>
+  </div>
+
+  <!-- ===== loader ===== -->
+  <div id="loader" aria-hidden="true">
+    <div class="ld-bg"></div>
+    <div class="ld-orb"></div>
+    <div class="ld-bloom" id="ldBloom"></div>
+    <div class="ld-core">
+      <svg class="ld-ring" viewBox="0 0 120 120">
+        <circle class="ld-ring-bg" cx="60" cy="60" r="53"></circle>
+        <circle class="ld-ring-fg" id="ldRingFg" cx="60" cy="60" r="53"></circle>
+      </svg>
+      <div class="ld-num" id="ldNum">0</div>
+      <div class="ld-word" id="ldWord">lighting the candles</div>
+    </div>
+    <div class="ld-flash" id="ldFlash"></div>
+    <div class="ld-logo" id="ldLogo">RITIKA</div>
+  </div>
+
+  <div class="curtain" id="curtain"><span></span><span></span><span></span><span></span><span></span></div>
+
+  <!-- ===== fixed fx ===== -->
+  <div class="progress" id="progress"></div>
+  <div class="vignette"></div>
+  <div class="grain"></div>
+  <div class="cursor-glow" id="glow"></div>
+  <div class="balloons" id="balloons"></div>
+  <canvas id="confetti"></canvas>
+
+  <button class="sound" id="sound" title="play music" aria-label="toggle music">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <path d="M4 15V9h3l4-3v12l-4-3H4z" fill="currentColor" stroke="none" />
+      <path class="waves" d="M15 9.5a3.5 3.5 0 0 1 0 5" />
+      <path class="waves" d="M17.5 7a7 7 0 0 1 0 10" />
+    </svg>
+  </button>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="bokeh b1"></div>
+      <div class="bokeh b2"></div>
+      <div class="bokeh b3"></div>
+      <div class="hero-photos" id="heroPhotos"></div>
+      <div class="hero-type">
+        <div class="eyebrow">26 · 10 · 2005 ∼ born to be loved</div>
+        <h1 class="hero-name" id="heroName" aria-label="Ritika"></h1>
+        <div class="hero-sub">HAPPY BIRTHDAY</div>
+        <div class="hero-badge"><b>★</b> turning twenty-one</div>
+      </div>
+      <div class="scroll-cue">scroll<i></i></div>
+    </section>
+
+    <!-- ===== TICKER ===== -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="ticker"></div>
+    </section>
+
+    <!-- ===== INTRO ===== -->
+    <section class="intro section" id="intro">
+      <div class="intro-photo ip-1"><img data-photo alt="" /></div>
+      <div class="intro-photo ip-2"><img data-photo alt="" /></div>
+      <div class="intro-lines">
+        <div class="line">
+          <p><i>twenty-one years</i></p>
+        </div>
+        <div class="line">
+          <p><i>of laughter, chaos</i></p>
+        </div>
+        <div class="line">
+          <p><i>and <em>becoming you.</em></i></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPLODE ===== -->
+    <section class="explode section" id="explode">
+      <div class="explode-stage" id="explodeStage">
+        <div class="explode-caption">
+          <h2 id="explodeWord">a life in frames</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== POLAROID ===== -->
+    <section class="polaroid section" id="polaroid">
+      <div class="polaroid-stage" id="polaroidStage">
+        <div class="polaroid-title">
+          <h2>the little moments</h2>
+          <p>kept forever</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FILMSTRIP ===== -->
+    <section class="strip section" id="strip">
+      <div class="strip-viewport">
+        <div class="strip-head">
+          <h2>the <em>highlight</em> reel</h2>
+          <p>scroll through us →</p>
+        </div>
+        <div class="strip-track" id="stripTrack"></div>
+        <div class="strip-progress"><i id="stripBar"></i></div>
+      </div>
+    </section>
+
+    <!-- ===== MOSAIC ===== -->
+    <section class="mosaic section" id="mosaic">
+      <div class="mosaic-head">
+        <h2>every version <em>of you</em></h2>
+      </div>
+      <div class="mosaic-cols" id="mosaicCols"></div>
+    </section>
+
+    <!-- ===== CYLINDER ===== -->
+    <section class="cylinder section" id="cylinder">
+      <div class="cyl-scene">
+        <div class="cyl-ring" id="cylRing"></div>
+        <div class="cyl-head">
+          <h2>spin through the years</h2>
+          <p>2005 → 2026</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 21 MASK ===== -->
+    <section class="mask21 section" id="mask21">
+      <h2 id="maskNum">21</h2>
+      <div class="mask-cap">twenty-one trips around the sun</div>
+      <blockquote>
+        Some people are just <b>a whole era</b> in your life.
+        You've been mine ∼ through every season, every soundtrack,
+        every ridiculous inside joke. <b>Here's to you.</b>
+      </blockquote>
+    </section>
+
+    <!-- ===== LETTER ===== -->
+    <section class="letter-sec section" id="letterSec">
+      <article class="letter">
+        <div class="seal">♡</div>
+        <h3>Dear Ritika,</h3>
+        <p>Twenty-one. Somehow that number feels impossible ∼ like the universe blinked and the girl I used to trade
+          snacks with became this whole entire person worth writing a website for.</p>
+        <p>I don't know how to explain what you are to me without sounding dramatic, so I'll just say it plainly: <span
+            class="hl">you make everything better by simply being there.</span> The boring Tuesdays, the bad days, the
+          long nights ∼ you turn all of it into something worth remembering.</p>
+        <p>Thank you for the laughter that always arrives at the absolute worst possible time. For every late-night
+          conversation that solved nothing and everything. For being the person I never had to explain myself to.</p>
+        <p>This year, I hope life gives you <span class="hl">every single thing you've been quietly hoping for</span> ∼
+          and a few impossible ones you didn't even dare to wish for. You deserve all of it, and then more.</p>
+        <p>Here's to more chaos, more memories, and a lifetime of me annoying you. Happy 21st, you absolute legend.</p>
+        <div class="sign">∼ Backup Forever</div>
+      </article>
+    </section>
+
+    <!-- ===== FINALE ===== -->
+    <section class="finale section" id="finale">
+      <div class="stars" id="stars"></div>
+      <div class="fin-stage" id="finStage">
+        <div class="heart-glow" id="heartGlow"></div>
+        <div class="heart-photos" id="heartPhotos"></div>
+
+        <div class="fin-center">
+          <div class="fin-eyebrow">26 · 10 · 2005 &nbsp;→&nbsp; 26 · 10 · 2026</div>
+          <h2 class="fin-title">Happy <span>21<sup>st</sup></span><br><em>Ritika</em></h2>
+          <div class="fin-candles" id="finCandles" aria-hidden="true"></div>
+        </div>
+
+        <button class="wish-btn" id="wishBtn">&#10024; make a wish &#10024;</button>
+        <div class="fin-foot">a heart made of every version of you · for ritika · 26.10.2026</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/photos-data.js"></script>
+  <script src="js/gsap.min.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
+  <script src="js/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
